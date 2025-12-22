@@ -7,6 +7,7 @@ public class SpawnerEntity : MonoBehaviour
 
     [SerializeField] Transform _spawnPoint;
     [SerializeField] int TimeForSpawn = 2;
+    private bool Spawn = true;
     void Start()
     {
         StartCoroutine(SpawnXTime());
@@ -14,9 +15,12 @@ public class SpawnerEntity : MonoBehaviour
 
     IEnumerator SpawnXTime()
     {
-        yield return new WaitForSeconds(TimeForSpawn);
+        while(Spawn)
+        {
+            yield return new WaitForSeconds(TimeForSpawn);
 
-        Instantiate(_gm, _spawnPoint);
-        StartCoroutine(SpawnXTime());
+            Instantiate(_gm, _spawnPoint);
+
+        }
     }
 }
