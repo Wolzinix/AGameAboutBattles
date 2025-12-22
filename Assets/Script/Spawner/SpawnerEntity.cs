@@ -6,7 +6,7 @@ public class SpawnerEntity : MonoBehaviour
     [SerializeField] GameObject _gm;
 
     [SerializeField] Transform _spawnPoint;
-    [SerializeField] int TimeForSpawn = 2;
+    [SerializeField] int TimeForSpawn = 3;
     private bool Spawn = true;
     void Start()
     {
