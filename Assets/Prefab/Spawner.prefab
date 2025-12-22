@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2454009619225407405}
   - component: {fileID: 5753940797908944031}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,5 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6345b56e27077f4f851a7675fa749c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gm: {fileID: 0}
-  _spawnPoint: {fileID: 2131772878505645820}
+  _gm: {fileID: 9135547851547669889, guid: f1133b1592e3eec4390e78050a7bf2e1, type: 3}
+  _spawnPoint: {fileID: 6857454415320189666, guid: 8ed23cc4719be8040af25a6046635322, type: 3}
+  TimeForSpawn: 2

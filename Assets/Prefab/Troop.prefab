@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 6137160266191597215}
   - component: {fileID: -6228262603045290455}
   m_Layer: 0
-  m_Name: New Prefab
+  m_Name: Troop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
