@@ -6,19 +6,17 @@ public class SpawnerEntity : MonoBehaviour
     [SerializeField] GameObject _gm;
 
     [SerializeField] Transform _spawnPoint;
+    [SerializeField] int TimeForSpawn = 2;
     void Start()
     {
         StartCoroutine(SpawnXTime());
     }
 
-    void Update()
-    {
-    }
-
     IEnumerator SpawnXTime()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(TimeForSpawn);
 
         Instantiate(_gm, _spawnPoint);
+        StartCoroutine(SpawnXTime());
     }
 }
