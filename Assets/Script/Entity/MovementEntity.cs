@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MovementEntity : MonoBehaviour
 {
-    [SerializeField] private float speed = 1;
+    [SerializeField] private float Speed = 5;
     public bool IsMoving = true; 
     void Start()
     {
@@ -15,8 +15,8 @@ public class MovementEntity : MonoBehaviour
         yield return null;
         while(IsMoving)
         {
-            yield return new WaitForSeconds(0.1f * speed);
-            transform.position += new Vector3(0, 0, 5f) * Time.deltaTime;
+            yield return new WaitForSeconds(0.01f);
+            transform.position += Speed * Time.deltaTime * transform.forward;
         }
         yield return null;
     }

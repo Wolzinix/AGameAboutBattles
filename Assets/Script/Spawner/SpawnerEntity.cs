@@ -19,8 +19,12 @@ public class SpawnerEntity : MonoBehaviour
         {
             yield return new WaitForSeconds(TimeForSpawn);
 
-            Instantiate(_gm, _spawnPoint);
+            GameObject instance = Instantiate(_gm, _spawnPoint);
 
+            instance.transform.rotation = transform.rotation;
+            instance.tag = tag;
         }
+
+        yield return null;
     }
 }
