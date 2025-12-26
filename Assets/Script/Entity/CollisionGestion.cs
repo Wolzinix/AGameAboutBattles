@@ -2,29 +2,39 @@ using UnityEngine;
 
 public class CollisionGestion : MonoBehaviour
 {
-    public bool IsAttacking;
     private MovementEntity m_Entity;
     private AttackEntity m_AttackEntity;
-    public EntityManager target; 
+    public EntityManager target;
 
-    void Start()
+    private void Start()
+    {
+        if(!target.GetComponent<MovementEntity>())
+        {
+            SearchTarget();
+        }
+    }
+    public void Starting()
     {
         m_Entity = GetComponent<MovementEntity>();
         m_AttackEntity = GetComponent<AttackEntity>();
-        SetTarget();
     }
 
-    private EntityManager RayCastForward()
+    private GameObject RayCastForward()
     {
         Physics.Raycast(transform.position, transform.forward,out RaycastHit hit);
-        EntityManager entityHit = hit.collider.GetComponent<EntityManager>();
-        return entityHit;
+
+        return hit.collider.gameObject;
     }
 
-    private void SetTarget()
+    public void SetTarget(GameObject Target)
     {
-        target = RayCastForward();
-        if(target.CompareTag(tag))
+        m_Entity.ChangeIsMoving();
+        m_Entity.EndMoving.RemoveAllListeners();
+
+        target = Target.GetComponent<EntityManager>();
+        target.DeadEvent.AddListener(SearchTarget);
+
+        if (target.CompareTag(tag))
         {
             MovementEntity tm = target.GetComponent<MovementEntity>();
             if (tm)
@@ -32,25 +42,21 @@ public class CollisionGestion : MonoBehaviour
                 tm.StartMoving.AddListener(m_Entity.ChangeIsMoving);
             }
         }
-    }
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (false)
+        else
         {
-            CollisionGestion cg = collision.GetComponent<CollisionGestion>();
-            if (!collision.CompareTag(tag))
-            {
-                m_Entity.ChangeIsMoving();
-                IsAttacking = true;
-                m_AttackEntity.StartAttack(collision.GetComponent<EntityManager>());
-            }
-            else
-            {
-                if (cg && cg.IsAttacking)
-                {
-                    m_Entity.ChangeIsMoving();
-                }
-            }
+            m_Entity.EndMoving.AddListener(StartAttacking);
         }
+    }
+    public void SearchTarget()
+    {
+        if(target)
+        {
+            target.DeadEvent.RemoveAllListeners();
+        }
+        SetTarget(RayCastForward());
+    }
+    private void StartAttacking()
+    {
+        m_AttackEntity.StartAttack(target);
     }
 }

@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class AttackEntity : MonoBehaviour
 {
@@ -12,19 +11,20 @@ public class AttackEntity : MonoBehaviour
     {
         manager = GetComponent<EntityManager>();
     }
-
     public void StartAttack(EntityManager target)
     {
-        IsAttacking = true;
         _target = target;
-        StartCoroutine(Attack());
+        if(!IsAttacking)
+        {
+            StartCoroutine(Attack());
+        }
     }
-
     IEnumerator Attack()
     {
         yield return null;
 
-        while(IsAttacking) 
+        IsAttacking = true;
+        while (IsAttacking) 
         {
             yield return new WaitForSeconds(1);
             if(_target )

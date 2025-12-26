@@ -154,7 +154,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  IsMoving: 1
+  IsMoving: 0
+  StartMoving:
+    m_PersistentCalls:
+      m_Calls: []
+  EndMoving:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8794736768757497574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aff89fe2ca8ae04d83d898c8da82afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsAttacking: 0
+  target: {fileID: 0}
 --- !u!114 &2071829420030741792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +189,9 @@ MonoBehaviour:
   Hp: 3
   Attack: 2
   Defense: 0
+  DeadEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &908924988887403799
 MonoBehaviour:
   m_ObjectHideFlags: 0

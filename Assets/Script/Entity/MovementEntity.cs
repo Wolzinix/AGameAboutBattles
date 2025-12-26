@@ -5,15 +5,15 @@ using UnityEngine.Events;
 public class MovementEntity : MonoBehaviour
 {
     [SerializeField] private float Speed = 5;
-    public bool IsMoving = true;
+    public bool IsMoving = false;
     CollisionGestion CG;
 
     public UnityEvent StartMoving = new();
+    public UnityEvent EndMoving = new();
 
     void Start()
     {
         CG = GetComponent<CollisionGestion>();
-        StartCoroutine(MoveForward());
     }
 
     IEnumerator MoveForward()
@@ -24,19 +24,23 @@ public class MovementEntity : MonoBehaviour
         {
             yield return new WaitForSeconds(0.01f);
             transform.position += Speed * Time.deltaTime * transform.forward;
-            if (Vector3.Distance(CG.target.transform.position, transform.position) < 1)
+            if(CG.target)
             {
-                IsMoving = false;
+                if (Vector3.Distance(CG.target.transform.position, transform.position) < 1)
+                {
+                    IsMoving = false;
+                }
             }
         }
+        EndMoving.Invoke();
         yield return null;
     }
 
     public void ChangeIsMoving()
     {
-        IsMoving = !IsMoving;
-        if(IsMoving)
+        if(!IsMoving)
         {
+            IsMoving = true;
             StartCoroutine(MoveForward());
         }
     }
