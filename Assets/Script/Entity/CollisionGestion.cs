@@ -1,11 +1,12 @@
 using UnityEngine;
 
+[RequireComponent (typeof(MovementEntity), typeof(EntityManager), typeof(AttackEntity))]
 public class CollisionGestion : MonoBehaviour
 {
+    [HideInInspector] public EntityManager target;
+
     private MovementEntity m_Entity;
     private AttackEntity m_AttackEntity;
-    public EntityManager target;
-
     private void Start()
     {
         if(!target.GetComponent<MovementEntity>())
@@ -18,14 +19,12 @@ public class CollisionGestion : MonoBehaviour
         m_Entity = GetComponent<MovementEntity>();
         m_AttackEntity = GetComponent<AttackEntity>();
     }
-
     private GameObject RayCastForward()
     {
         Physics.Raycast(transform.position, transform.forward,out RaycastHit hit);
 
         return hit.collider.gameObject;
     }
-
     public void SetTarget(GameObject Target)
     {
         m_Entity.ChangeIsMoving();
@@ -58,5 +57,10 @@ public class CollisionGestion : MonoBehaviour
     private void StartAttacking()
     {
         m_AttackEntity.StartAttack(target);
+    }
+
+    public bool IsMoving()
+    {
+        return m_Entity.IsMoving;
     }
 }

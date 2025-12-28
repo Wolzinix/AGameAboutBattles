@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class AttackEntity : MonoBehaviour
 {
-    EntityManager manager;
-    public bool IsAttacking;
-    EntityManager _target;
+    private bool IsAttacking;
+    private EntityManager manager;
+    private EntityManager _target;
 
     void Start()
     {
@@ -21,20 +21,13 @@ public class AttackEntity : MonoBehaviour
     }
     IEnumerator Attack()
     {
-        yield return null;
-
         IsAttacking = true;
+
         while (IsAttacking) 
         {
             yield return new WaitForSeconds(1);
-            if(_target )
-            {
-                _target.TakeDamage(manager.Attack);
-            }
-            else
-            {
-                IsAttacking = false;
-            }
+            if(_target) { _target.TakeDamage(manager.Attack); }
+            else { IsAttacking = false; }
         }
 
         yield return null;

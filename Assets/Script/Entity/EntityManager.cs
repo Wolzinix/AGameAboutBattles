@@ -4,10 +4,9 @@ using UnityEngine.Events;
 public class EntityManager : MonoBehaviour
 {
     [SerializeField] private float Hp = 3;
-    [SerializeField] public float Attack = 2;
-    [SerializeField] private float Defense = 0;
+    public float Attack = 2;
 
-    public UnityEvent DeadEvent = new();
+    [HideInInspector] public UnityEvent DeadEvent = new();
     public void TakeDamage(float damage)
     {
         Hp -= damage;
@@ -18,10 +17,10 @@ public class EntityManager : MonoBehaviour
     {
         if (Hp < 0)
         {
-            GetComponent<BoxCollider>().enabled = false;    
+            GetComponent<BoxCollider>().enabled = false;
+            DeadEvent.Invoke();
             Destroy(gameObject);
             
-            DeadEvent.Invoke();
         }
     }
 }

@@ -93,12 +93,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6137160266191597215}
   - component: {fileID: 146336201620806820}
-  - component: {fileID: -6228262603045290455}
   - component: {fileID: 8794736768757497574}
+  - component: {fileID: -6228262603045290455}
   - component: {fileID: 2071829420030741792}
   - component: {fileID: 908924988887403799}
   m_Layer: 0
-  m_Name: New Prefab
+  m_Name: FirstEntity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,6 +141,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8794736768757497574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9135547851547669889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aff89fe2ca8ae04d83d898c8da82afe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!114 &-6228262603045290455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,19 +174,6 @@ MonoBehaviour:
   EndMoving:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8794736768757497574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9135547851547669889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aff89fe2ca8ae04d83d898c8da82afe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!114 &2071829420030741792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,9 +186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2bbc0d9a3db0d44a1fe0fef272a049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 3
-  Attack: 2
+  Hp: 6
   Defense: 0
+  Attack: 2
   DeadEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -204,4 +204,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0caba07849ba7754a8e51150e4441ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsAttacking: 0

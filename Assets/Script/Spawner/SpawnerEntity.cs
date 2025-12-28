@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(EntityManager))]
 public class SpawnerEntity : MonoBehaviour
 {
     [SerializeField] private GameObject _gm;
