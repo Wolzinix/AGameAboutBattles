@@ -99,7 +99,11 @@ GameObject:
   - component: {fileID: 908924988887403799}
   - component: {fileID: 682573406597629291}
   m_Layer: 0
+<<<<<<<< HEAD:Assets/Prefab/HeavyTroop.prefab
   m_Name: HeavyTroop
+========
+  m_Name: Troop
+>>>>>>>> 1-LevelDesign:Assets/Prefab/Troop.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
