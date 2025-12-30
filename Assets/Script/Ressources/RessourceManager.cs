@@ -20,4 +20,8 @@ public class RessourceManager : MonoBehaviour
         yield return null;
     }
 
+    public void AddGold(int gold)
+    {
+        _Or += gold;
+    }
 }

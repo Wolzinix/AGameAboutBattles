@@ -7,12 +7,21 @@ public class SpawnerEntity : MonoBehaviour
     [SerializeField] private GameObject _gm;
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private int TimeForSpawn = 3;
+    [SerializeField] private RessourceManager ressourceManagerEnnemie;
+
 
     public bool Spawn = true;
 
     private GameObject _LastSpawned = null;
     void Start()
     {
+        foreach(RessourceManager i in Resources.FindObjectsOfTypeAll(typeof(RessourceManager)))
+        {
+            if(!i.CompareTag(tag))
+            {
+                ressourceManagerEnnemie = i;
+            }
+        }
         StartCoroutine(SpawnXTime());
     }
 
@@ -27,6 +36,8 @@ public class SpawnerEntity : MonoBehaviour
 
             instance.transform.rotation = transform.rotation;
             instance.tag = tag;
+
+            instance.GetComponent<EntityManager>().ressourceManagerToGive = ressourceManagerEnnemie;
 
             CollisionGestion cgInstance = instance.GetComponent<CollisionGestion>();
 
