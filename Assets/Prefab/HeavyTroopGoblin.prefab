@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 908924988887403799}
   - component: {fileID: 4147929109730242997}
   m_Layer: 0
-  m_Name: LigntTroop
+  m_Name: HeavyTroopGoblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,8 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2bbc0d9a3db0d44a1fe0fef272a049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 18
-  Attack: 7
+  Hp: 40
+  Attack: 8
   DeadEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -224,7 +224,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0835c8eba5145c0459d8d776a5623551, type: 2}
+  - {fileID: 2100000, guid: 11b12f168dd93134e8849d75455acd67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
