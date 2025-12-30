@@ -1,10 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RessourceManager : MonoBehaviour
 {
     [SerializeField] private int _Or;
     [SerializeField] bool SpawnRessources = true;
+
+    [HideInInspector] public UnityEvent GoldUse = new();
 
     void Start()
     {
@@ -15,7 +18,7 @@ public class RessourceManager : MonoBehaviour
         while(SpawnRessources)
         {
             yield return new WaitForSeconds(1);
-            _Or += 1;
+            AddGold(1);
         }
         yield return null;
     }
@@ -23,5 +26,11 @@ public class RessourceManager : MonoBehaviour
     public void AddGold(int gold)
     {
         _Or += gold;
+        GoldUse.Invoke();
+    }
+
+    public int GetGold()
+    {
+        return _Or;
     }
 }

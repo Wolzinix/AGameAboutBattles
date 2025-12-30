@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 490909094261702249, guid: a55bc75e274f1d74bb76382279e5b029, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 2054860121}
     - target: {fileID: 1112169217460159182, guid: a55bc75e274f1d74bb76382279e5b029, type: 3}
       propertyPath: m_Name
       value: Ui
@@ -213,6 +217,10 @@ PrefabInstance:
     - target: {fileID: 1943541829489684157, guid: a55bc75e274f1d74bb76382279e5b029, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737221251163484807, guid: a55bc75e274f1d74bb76382279e5b029, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -402,6 +410,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Or: 0
   SpawnRessources: 1
+  GoldUse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1688926723
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +704,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Or: 0
   SpawnRessources: 1
+  GoldUse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
