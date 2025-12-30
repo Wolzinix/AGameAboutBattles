@@ -1,24 +1,53 @@
-using JetBrains.Annotations;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MovementEntity : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] private float speed = 1;
-    public bool IsMoving = true; 
+    [SerializeField] private float Speed = 5;
+
+    [HideInInspector] public bool IsMoving = false;
+    [HideInInspector] public UnityEvent StartMoving = new();
+    [HideInInspector] public UnityEvent EndMoving = new();
+
+    private CollisionGestion CG;
     void Start()
     {
-        StartCoroutine(MoveForward());
+        CG = GetComponent<CollisionGestion>();
     }
-
     IEnumerator MoveForward()
     {
-        yield return null;
-        while(IsMoving)
+        if (CG && CG.target && CG.gameObject.CompareTag(gameObject.tag))
         {
-            yield return new WaitForSeconds(0.1f * speed);
-            transform.position += new Vector3(0, 0, 5f) * Time.deltaTime;
+            if (Vector3.Distance(CG.target.transform.position, transform.position) < 1f)
+            {
+                yield return new WaitForSeconds(0.2f);
+            }
+        }
+        StartMoving.Invoke();
+        while (IsMoving)
+        {
+            yield return new WaitForSeconds(0.01f);
+            transform.position += Speed * Time.deltaTime * transform.forward;
+            if(CG.target)
+            {
+                if (Vector3.Distance(CG.target.transform.position, transform.position) < 1f)
+                {
+                    IsMoving = false;
+                    
+                }
+            }
+        }
+        EndMoving.Invoke();
+        yield return null;
+    }
+    public void ChangeIsMoving()
+    {
+        if(!IsMoving)
+        {
+            IsMoving = true;
+
+            StartCoroutine(MoveForward());
         }
     }
 }
