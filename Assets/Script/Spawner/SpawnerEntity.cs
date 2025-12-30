@@ -1,26 +1,27 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(EntityManager))]
 public class SpawnerEntity : MonoBehaviour
 {
     [SerializeField] private GameObject _gm;
     [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private int TimeForSpawn = 3;
-    [SerializeField] private RessourceManager ressourceManagerEnnemie;
-
+    [SerializeField] private float TimeForSpawn = 3;
+    private RessourceManager ressourceManagerEnnemie;
+    private RessourceManager ressourceManagerAllie;
 
     public bool Spawn = true;
 
     private GameObject _LastSpawned = null;
+
+    public UnityEvent SpawnEntity = new();
     void Start()
     {
         foreach(RessourceManager i in Resources.FindObjectsOfTypeAll(typeof(RessourceManager)))
         {
-            if(!i.CompareTag(tag))
-            {
-                ressourceManagerEnnemie = i;
-            }
+            if(!i.CompareTag(tag)){ ressourceManagerEnnemie = i;}
+            else{  ressourceManagerAllie = i; }
         }
         StartCoroutine(SpawnXTime());
     }
@@ -31,8 +32,17 @@ public class SpawnerEntity : MonoBehaviour
         //for (int i = 0; i < 2; i++) 
         {
             yield return new WaitForSeconds(TimeForSpawn);
+            GenerateEntity(_gm);
+        }
 
-            GameObject instance = Instantiate(_gm, _spawnPoint);
+        yield return null;
+    }
+
+    public void GenerateEntity(GameObject entity)
+    {
+        if (ressourceManagerAllie.RemoveGold(entity.GetComponent<EntityManager>().GetCost()))
+        {
+            GameObject instance = Instantiate(entity, _spawnPoint);
 
             instance.transform.rotation = transform.rotation;
             instance.tag = tag;
@@ -45,8 +55,7 @@ public class SpawnerEntity : MonoBehaviour
             if (_LastSpawned) { cgInstance.SetTarget(_LastSpawned); }
             else { cgInstance.SearchTarget(); }
             _LastSpawned = instance;
+            SpawnEntity.Invoke();
         }
-
-        yield return null;
     }
 }

@@ -15,4 +15,9 @@ public class RessourceUI : MonoBehaviour
     {
         text.text = manager.GetGold().ToString();
     }
+
+    public RessourceManager GetRessourceManacer()
+    {
+        return manager;
+    }
 }

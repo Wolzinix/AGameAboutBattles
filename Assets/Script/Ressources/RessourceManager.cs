@@ -17,8 +17,8 @@ public class RessourceManager : MonoBehaviour
     {
         while(SpawnRessources)
         {
-            yield return new WaitForSeconds(1);
-            AddGold(1);
+            yield return new WaitForSeconds(0.5f);
+            AddGold(4);
         }
         yield return null;
     }
@@ -32,5 +32,14 @@ public class RessourceManager : MonoBehaviour
     public int GetGold()
     {
         return _Or;
+    }
+    public bool RemoveGold(int gold)
+    {
+        if(gold <= _Or)
+        {
+            _Or -= gold;
+            return true;
+        }
+        return false;
     }
 }

@@ -5,6 +5,7 @@ public class EntityManager : MonoBehaviour
 {
     [SerializeField] private float Hp = 3;
     public float Attack = 2;
+    [SerializeField] private int Cost = 3;
     [SerializeField] private int Gold = 3;
     public RessourceManager ressourceManagerToGive;
 
@@ -26,5 +27,10 @@ public class EntityManager : MonoBehaviour
             Destroy(gameObject);
             
         }
+    }
+
+    public int GetCost()
+    {
+        return Cost;
     }
 }
