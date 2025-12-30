@@ -97,13 +97,9 @@ GameObject:
   - component: {fileID: -6228262603045290455}
   - component: {fileID: 2071829420030741792}
   - component: {fileID: 908924988887403799}
-  - component: {fileID: 682573406597629291}
+  - component: {fileID: 4147929109730242997}
   m_Layer: 0
-<<<<<<<< HEAD:Assets/Prefab/HeavyTroop.prefab
   m_Name: HeavyTroop
-========
-  m_Name: Troop
->>>>>>>> 1-LevelDesign:Assets/Prefab/Troop.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17d46be810a3fa54280f775f1b802f0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
+  Speed: 4
   IsMoving: 0
   StartMoving:
     m_PersistentCalls:
@@ -208,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0caba07849ba7754a8e51150e4441ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!23 &682573406597629291
+--- !u!23 &4147929109730242997
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
