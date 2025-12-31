@@ -6,7 +6,7 @@ public class MovementEntity : MonoBehaviour
 {
     [SerializeField] private float Speed = 5;
 
-    [HideInInspector] public bool IsMoving = false;
+    [HideInInspector] private bool IsMoving = false;
     [HideInInspector] public UnityEvent StartMoving = new();
     [HideInInspector] public UnityEvent EndMoving = new();
 
@@ -21,7 +21,10 @@ public class MovementEntity : MonoBehaviour
         {
             if (Vector3.Distance(CG.target.transform.position, transform.position) < 1f)
             {
-                yield return new WaitForSeconds(0.2f);
+                while(Vector3.Distance(CG.target.transform.position, transform.position) < 1f)
+                {
+                    yield return new WaitForSeconds(0.5f);
+                }
             }
         }
         StartMoving.Invoke();
@@ -33,8 +36,7 @@ public class MovementEntity : MonoBehaviour
             {
                 if (Vector3.Distance(CG.target.transform.position, transform.position) < 1f)
                 {
-                    IsMoving = false;
-                    
+                    IsMoving = false; 
                 }
             }
         }
@@ -43,11 +45,17 @@ public class MovementEntity : MonoBehaviour
     }
     public void ChangeIsMoving()
     {
+        if(!CG) { CG = GetComponent<CollisionGestion>(); }
         if(!IsMoving)
         {
             IsMoving = true;
 
             StartCoroutine(MoveForward());
         }
+    }
+
+    public bool IsItMoving()
+    {
+        return IsMoving;
     }
 }

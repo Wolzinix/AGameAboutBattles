@@ -27,11 +27,11 @@ public class CollisionGestion : MonoBehaviour
     }
     public void SetTarget(GameObject Target)
     {
-        m_Entity.ChangeIsMoving();
         m_Entity.EndMoving.RemoveAllListeners();
 
         target = Target.GetComponent<EntityManager>();
         target.DeadEvent.AddListener(SearchTarget);
+
         SpawnerEntity spawner = target.GetComponent<SpawnerEntity>();
         if (spawner)
         {
@@ -50,6 +50,8 @@ public class CollisionGestion : MonoBehaviour
         {
             m_Entity.EndMoving.AddListener(StartAttacking);
         }
+
+        m_Entity.ChangeIsMoving();
     }
     public void SearchTarget()
     {
@@ -66,6 +68,6 @@ public class CollisionGestion : MonoBehaviour
 
     public bool IsMoving()
     {
-        return m_Entity.IsMoving;
+        return m_Entity.IsItMoving();
     }
 }
