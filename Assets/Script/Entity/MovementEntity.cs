@@ -21,7 +21,7 @@ public class MovementEntity : MonoBehaviour
         {
             if (Vector3.Distance(CG.target.transform.position, transform.position) < 1f)
             {
-                while(Vector3.Distance(CG.target.transform.position, transform.position) < 1f)
+                while(CG && Vector3.Distance(CG.target.transform.position, transform.position) < 1f)
                 {
                     yield return new WaitForSeconds(0.5f);
                 }
@@ -53,7 +53,6 @@ public class MovementEntity : MonoBehaviour
             StartCoroutine(MoveForward());
         }
     }
-
     public bool IsItMoving()
     {
         return IsMoving;

@@ -17,18 +17,16 @@ public class RessourceManager : MonoBehaviour
     {
         while(SpawnRessources)
         {
-            yield return new WaitForSeconds(0.5f);
-            AddGold(4);
+            yield return new WaitForSeconds(1f);
+            AddGold(1);
         }
         yield return null;
     }
-
     public void AddGold(int gold)
     {
         _Or += gold;
         GoldUse.Invoke();
     }
-
     public int GetGold()
     {
         return _Or;

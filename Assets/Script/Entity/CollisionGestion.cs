@@ -65,7 +65,6 @@ public class CollisionGestion : MonoBehaviour
     {
         m_AttackEntity.StartAttack(target);
     }
-
     public bool IsMoving()
     {
         return m_Entity.IsItMoving();

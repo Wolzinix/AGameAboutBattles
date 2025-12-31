@@ -25,7 +25,6 @@ public class SpawnerEntity : MonoBehaviour
         }
         StartCoroutine(SpawnXTime());
     }
-
     IEnumerator SpawnXTime()
     {
         while(Spawn)
@@ -37,7 +36,6 @@ public class SpawnerEntity : MonoBehaviour
 
         yield return null;
     }
-
     public void GenerateEntity(GameObject entity)
     {
         if (ressourceManagerAllie.RemoveGold(entity.GetComponent<EntityManager>().GetCost()))
@@ -52,8 +50,10 @@ public class SpawnerEntity : MonoBehaviour
             CollisionGestion cgInstance = instance.GetComponent<CollisionGestion>();
 
             cgInstance.Starting();
+
             if (_LastSpawned) { cgInstance.SetTarget(_LastSpawned); }
             else { cgInstance.SearchTarget(); }
+
             _LastSpawned = instance;
             SpawnEntity.Invoke();
         }
