@@ -58,4 +58,8 @@ public class SpawnerEntity : MonoBehaviour
             SpawnEntity.Invoke();
         }
     }
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
 }

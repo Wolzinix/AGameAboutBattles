@@ -40,4 +40,8 @@ public class RessourceManager : MonoBehaviour
         }
         return false;
     }
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
 }
