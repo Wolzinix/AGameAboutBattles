@@ -10,7 +10,6 @@ public class EntityManager : MonoBehaviour
     public float Attack = 2;
     public RessourceManager ressourceManagerToGive;
 
-
     [HideInInspector] public UnityEvent DeadEvent = new();
     public void TakeDamage(float damage)
     {
@@ -23,10 +22,13 @@ public class EntityManager : MonoBehaviour
         if (Hp < 0)
         {
             GetComponent<BoxCollider>().enabled = false;
-            ressourceManagerToGive.AddGold(Gold);
+            if(ressourceManagerToGive)
+            {
+                ressourceManagerToGive.AddGold(Gold);
+            }
             DeadEvent.Invoke();
+            DeadEvent.RemoveAllListeners();
             Destroy(gameObject);
-            
         }
     }
 

@@ -14,6 +14,7 @@ public class MovementEntity : MonoBehaviour
     void Start()
     {
         CG = GetComponent<CollisionGestion>();
+        GetComponent<EntityManager>().DeadEvent.AddListener(StopEverything);
     }
     IEnumerator MoveForward()
     {
@@ -56,5 +57,9 @@ public class MovementEntity : MonoBehaviour
     public bool IsItMoving()
     {
         return IsMoving;
+    }
+    public void StopEverything()
+    {
+        StopAllCoroutines();
     }
 }

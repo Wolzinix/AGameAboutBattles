@@ -22,8 +22,7 @@ public class CollisionGestion : MonoBehaviour
     private GameObject RayCastForward()
     {
         Physics.Raycast(transform.position, transform.forward,out RaycastHit hit);
-
-        return hit.collider.gameObject;
+        return hit.collider ? hit.collider.gameObject : gameObject;
     }
     public void SetTarget(GameObject Target)
     {
@@ -57,7 +56,7 @@ public class CollisionGestion : MonoBehaviour
     {
         if(target)
         {
-            target.DeadEvent.RemoveAllListeners();
+            target.DeadEvent.RemoveListener(SearchTarget);
         }
         SetTarget(RayCastForward());
     }
