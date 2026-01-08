@@ -349,6 +349,7 @@ MonoBehaviour:
   Cost: 3
   Gold: 3
   hpBar: {fileID: 4634264227896950093}
+  RecompenseText: {fileID: 8940266054732661025, guid: 041e6629f00ee84468f62d7240d1e1f2, type: 3}
   Attack: 2
   ressourceManagerToGive: {fileID: 0}
   DeadEvent:

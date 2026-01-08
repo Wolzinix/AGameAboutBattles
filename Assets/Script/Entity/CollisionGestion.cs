@@ -34,7 +34,7 @@ public class CollisionGestion : MonoBehaviour
         SpawnerEntity spawner = target.GetComponent<SpawnerEntity>();
         if (spawner)
         {
-            spawner.SpawnEntity.AddListener(SearchTarget);
+            spawner.SpawnedEntity.AddListener(SearchTarget);
         }
 
         if (target.CompareTag(tag))

@@ -13,7 +13,7 @@ public class ButtonSpawner : Button
 
     private void SpawnEntity()
     {
-        ressourceUI.GetRessourceManacer().GetComponent<SpawnerEntity>().GenerateEntity(entityToSpawn);
+        ressourceUI.GetRessourceManacer().GetComponent<SpawnerEntity>().AddToSpawn(entityToSpawn);
     }
 
 }
