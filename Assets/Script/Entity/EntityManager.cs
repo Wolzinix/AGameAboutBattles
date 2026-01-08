@@ -1,19 +1,31 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class EntityManager : MonoBehaviour
 {
+    private float maxHP;
     [SerializeField] private float Hp = 3;
     [SerializeField] private int Cost = 3;
     [SerializeField] private int Gold = 3;
+    [SerializeField] private Image hpBar;
 
     public float Attack = 2;
     public RessourceManager ressourceManagerToGive;
 
     [HideInInspector] public UnityEvent DeadEvent = new();
+    private void Start()
+    {
+        maxHP = Hp;
+        
+    }
     public void TakeDamage(float damage)
     {
         Hp -= damage;
+        if (hpBar)
+        {
+            hpBar.fillAmount = Hp / maxHP;
+        }
         IsDead();
     }
 
