@@ -22,16 +22,20 @@ public class CollisionGestion : MonoBehaviour
     private GameObject RayCastForward()
     {
         Physics.Raycast(transform.position, transform.forward,out RaycastHit hit);
-
-        return hit.collider.gameObject;
+        return hit.collider ? hit.collider.gameObject : gameObject;
     }
     public void SetTarget(GameObject Target)
     {
-        m_Entity.ChangeIsMoving();
         m_Entity.EndMoving.RemoveAllListeners();
 
         target = Target.GetComponent<EntityManager>();
         target.DeadEvent.AddListener(SearchTarget);
+
+        SpawnerEntity spawner = target.GetComponent<SpawnerEntity>();
+        if (spawner)
+        {
+            spawner.SpawnedEntity.AddListener(SearchTarget);
+        }
 
         if (target.CompareTag(tag))
         {
@@ -45,12 +49,14 @@ public class CollisionGestion : MonoBehaviour
         {
             m_Entity.EndMoving.AddListener(StartAttacking);
         }
+
+        m_Entity.ChangeIsMoving();
     }
     public void SearchTarget()
     {
         if(target)
         {
-            target.DeadEvent.RemoveAllListeners();
+            target.DeadEvent.RemoveListener(SearchTarget);
         }
         SetTarget(RayCastForward());
     }
@@ -58,9 +64,8 @@ public class CollisionGestion : MonoBehaviour
     {
         m_AttackEntity.StartAttack(target);
     }
-
     public bool IsMoving()
     {
-        return m_Entity.IsMoving;
+        return m_Entity.IsItMoving();
     }
 }
