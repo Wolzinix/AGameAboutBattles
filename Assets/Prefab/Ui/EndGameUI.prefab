@@ -309,6 +309,7 @@ GameObject:
   - component: {fileID: 2997535633993398805}
   - component: {fileID: 2807880210112243973}
   - component: {fileID: 9077901608219697682}
+  - component: {fileID: 8153899197314669498}
   m_Layer: 0
   m_Name: ButtonNouvellePartie
   m_TagString: Untagged
@@ -417,7 +418,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2807880210112243973}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8153899197314669498}
+        m_TargetAssemblyTypeName: SceneChangement, Assembly-CSharp
+        m_MethodName: ChargeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8153899197314669498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6187623017231502469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445f7ec2e7e626c4981c12b7f3f50d6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumeroOfTheScene: 0
 --- !u!1 &7768081222192199210
 GameObject:
   m_ObjectHideFlags: 0
