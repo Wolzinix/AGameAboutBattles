@@ -7,6 +7,11 @@ public class RessourceUI : MonoBehaviour
     [SerializeField] TMP_Text text;
     void Start()
     {
+        foreach (RessourceManager i in FindSceneObjectsOfType(typeof(RessourceManager)))
+        {
+            if (i.CompareTag(tag)) { manager = i; break; }
+        }
+
         manager.GoldUse.AddListener(ActualiseUI);
         ActualiseUI();
     }

@@ -36,6 +36,7 @@ public class RessourceManager : MonoBehaviour
         if(gold <= _Or)
         {
             _Or -= gold;
+            GoldUse.Invoke();
             return true;
         }
         return false;

@@ -7,15 +7,15 @@ public class EntityManager : MonoBehaviour
 {
     private float maxHP;
     [SerializeField] private float Hp = 3;
-    [SerializeField] private int Cost = 3;
-    [SerializeField] private int Gold = 3;
+    [SerializeField] private int GoldCost = 3;
+    [SerializeField] private int GoldGive = 3;
     [SerializeField] public int TimeForApparition = 3;
     [SerializeField] private Image hpBar;
 
     [SerializeField] private GameObject RecompenseText;
     public float Attack = 2;
-    public RessourceManager ressourceManagerToGive;
 
+    [HideInInspector] public RessourceManager ressourceManagerToGive;
     [HideInInspector] public UnityEvent DeadEvent = new();
     private void Start()
     {
@@ -39,12 +39,12 @@ public class EntityManager : MonoBehaviour
             GetComponent<BoxCollider>().enabled = false;
             if(ressourceManagerToGive)
             {
-                ressourceManagerToGive.AddGold(Gold);
+                ressourceManagerToGive.AddGold(GoldGive);
                 if(RecompenseText)
                 {
                     GameObject textToRecompense = Instantiate(RecompenseText);
                     textToRecompense.transform.position = transform.position;
-                    textToRecompense.GetComponentInChildren<TMP_Text>().text = Gold.ToString();
+                    textToRecompense.GetComponentInChildren<TMP_Text>().text = GoldGive.ToString();
                 }
                 
 
@@ -57,6 +57,6 @@ public class EntityManager : MonoBehaviour
 
     public int GetCost()
     {
-        return Cost;
+        return GoldCost;
     }
 }

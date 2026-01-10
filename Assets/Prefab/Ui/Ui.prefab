@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 490909094261702249}
   m_Layer: 0
   m_Name: Ressource
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-  entityToSpawn: {fileID: 9135547851547669889, guid: f1133b1592e3eec4390e78050a7bf2e1, type: 3}
+  entityToSpawn: {fileID: 9135547851547669889, guid: 0970964abd6a9f546a5641068f71d409, type: 3}
   ressourceUI: {fileID: 0}
 --- !u!1 &2660555885812293402
 GameObject:
@@ -608,7 +608,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-  entityToSpawn: {fileID: 9135547851547669889, guid: b374f50e63ab9be4fb6b375f62d3522a, type: 3}
+  entityToSpawn: {fileID: 9135547851547669889, guid: f6b020edfdcd66241aca0716af79ec92, type: 3}
   ressourceUI: {fileID: 0}
 --- !u!1 &3145898204631125677
 GameObject:
@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-  entityToSpawn: {fileID: 9135547851547669889, guid: 43576bac51d01ee43a035832fcfece4c, type: 3}
+  entityToSpawn: {fileID: 9135547851547669889, guid: 5c3147e04cd6e9b428cfb1e7193973dc, type: 3}
   ressourceUI: {fileID: 0}
 --- !u!1 &8646580373392901650
 GameObject:

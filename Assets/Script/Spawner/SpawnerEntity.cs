@@ -6,23 +6,23 @@ using UnityEngine.Events;
 [RequireComponent(typeof(EntityManager))]
 public class SpawnerEntity : MonoBehaviour
 {
-    [SerializeField] private GameObject _gm;
+    [SerializeField] private GameObject EntitySpawnForIA;
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private float TimeForSpawn = 3;
+   
+    public bool InfinitSpawn = true;
+
+    [HideInInspector] public UnityEvent SpawnedEntity = new();
+
+    private bool spawning = false;
+    private GameObject _LastSpawned = null;
+    private List<GameObject> listOfSpawning = new();
     private RessourceManager ressourceManagerEnnemie;
     private RessourceManager ressourceManagerAllie;
 
-    public bool Spawn = true;
-    private bool spawning = false;
-
-    private GameObject _LastSpawned = null;
-
-    public UnityEvent SpawnedEntity = new();
-
-    private List<GameObject> listOfSpawning = new();
     void Start()
     {
-        foreach(RessourceManager i in Resources.FindObjectsOfTypeAll(typeof(RessourceManager)))
+        foreach(RessourceManager i in FindSceneObjectsOfType(typeof(RessourceManager)))
         {
             if(!i.CompareTag(tag)){ ressourceManagerEnnemie = i;}
             else{  ressourceManagerAllie = i; }
@@ -31,11 +31,11 @@ public class SpawnerEntity : MonoBehaviour
     }
     IEnumerator SpawnXTime()
     {
-        while(Spawn)
+        while(InfinitSpawn)
         //for (int i = 0; i < 2; i++) 
         {
             yield return new WaitForSeconds(TimeForSpawn);
-            AddToSpawn(_gm);
+            AddToSpawn(EntitySpawnForIA);
         }
 
         yield return null;
