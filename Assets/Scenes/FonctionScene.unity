@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 490909094261702249, guid: a55bc75e274f1d74bb76382279e5b029, type: 3}
       propertyPath: manager
       value: 
-      objectReference: {fileID: 2054860128}
+      objectReference: {fileID: 0}
     - target: {fileID: 1112169217460159182, guid: a55bc75e274f1d74bb76382279e5b029, type: 3}
       propertyPath: m_Name
       value: Ui
@@ -1225,17 +1225,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
---- !u!114 &2054860128 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2659716124292041960, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-  m_PrefabInstance: {fileID: 2054860119}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97faaf341a1fc7a42a22fcd038e2fe17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2054860130 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6659802547009315203, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}

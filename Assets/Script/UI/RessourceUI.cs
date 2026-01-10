@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RessourceUI : MonoBehaviour
 {
-    [SerializeField] RessourceManager manager;
+    RessourceManager manager;
     [SerializeField] TMP_Text text;
     void Start()
     {
