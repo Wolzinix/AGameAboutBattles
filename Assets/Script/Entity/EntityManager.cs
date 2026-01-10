@@ -20,7 +20,6 @@ public class EntityManager : MonoBehaviour
     private void Start()
     {
         maxHP = Hp;
-        
     }
     public void TakeDamage(float damage)
     {
@@ -34,7 +33,7 @@ public class EntityManager : MonoBehaviour
 
     private void IsDead()
     {
-        if (Hp < 0)
+        if (Hp <= 0)
         {
             GetComponent<BoxCollider>().enabled = false;
             if(ressourceManagerToGive)
