@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &-6228262603045290455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,8 +264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 60
-  Cost: 80
-  Gold: 40
+  GoldCost: 3
+  GoldGive: 3
   TimeForApparition: 8
   hpBar: {fileID: 4634264227896950093}
   RecompenseText: {fileID: 8940266054732661025, guid: 041e6629f00ee84468f62d7240d1e1f2, type: 3}
@@ -360,10 +361,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 575283615687618061}
   m_SourcePrefab: {fileID: 100100000, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
 --- !u!4 &8568294199644886772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
   m_PrefabInstance: {fileID: 8170105116429578527}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9053187982645775438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
+  m_PrefabInstance: {fileID: 8170105116429578527}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &575283615687618061
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9053187982645775438}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 183a667db635af2479e206cba2f93b96, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
