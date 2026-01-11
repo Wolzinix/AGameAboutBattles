@@ -5,7 +5,7 @@ public class AttackEntity : MonoBehaviour
 {
     private bool IsAttacking;
     private EntityManager manager;
-    private EntityManager _target;
+    [SerializeField] private EntityManager _target;
     private CollisionGestion CG;
 
     void Start()

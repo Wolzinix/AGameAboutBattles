@@ -19,7 +19,7 @@ public class MovementEntity : MonoBehaviour
     }
     IEnumerator MoveForward()
     {
-        if (CG && CG.target && CG.gameObject.CompareTag(gameObject.tag))
+        if (CG && CG.target && CG.target.CompareTag(gameObject.tag))
         {
             if (Vector3.Distance(CG.target.transform.position, transform.position) < 1f)
             {

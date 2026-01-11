@@ -10,7 +10,7 @@ public class CollisionGestion : MonoBehaviour
     public Animator animator;
     private void Start()
     {
-        if(!target.GetComponent<MovementEntity>())
+        if(!target ||!target.GetComponent<MovementEntity>())
         {
             SearchTarget();
         }
