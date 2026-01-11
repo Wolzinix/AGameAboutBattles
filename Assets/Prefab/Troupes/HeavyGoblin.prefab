@@ -264,8 +264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 60
-  GoldCost: 3
-  GoldGive: 3
+  GoldCost: 80
+  GoldGive: 40
   TimeForApparition: 8
   hpBar: {fileID: 4634264227896950093}
   RecompenseText: {fileID: 8940266054732661025, guid: 041e6629f00ee84468f62d7240d1e1f2, type: 3}
@@ -286,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0caba07849ba7754a8e51150e4441ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _target: {fileID: 0}
 --- !u!1001 &4158130246468056272
 PrefabInstance:
   m_ObjectHideFlags: 0
