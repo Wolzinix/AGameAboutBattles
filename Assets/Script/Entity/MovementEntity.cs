@@ -11,12 +11,11 @@ public class MovementEntity : MonoBehaviour
     [HideInInspector] public UnityEvent EndMoving = new();
 
     private CollisionGestion CG;
-    Animator animator;
+    
     void Start()
     {
         CG = GetComponent<CollisionGestion>();
         GetComponent<EntityManager>().DeadEvent.AddListener(StopEverything);
-        animator = GetComponentInChildren<Animator>();
     }
     IEnumerator MoveForward()
     {
@@ -30,14 +29,18 @@ public class MovementEntity : MonoBehaviour
                 }
             }
         }
+        
         StartMoving.Invoke();
-        if(animator)
+        if (CG.animator)
         {
-
-            AnimationController.PlayAnimation((int)AnimationController.AnimType.Move, animator);
+            AnimationController.PlayAnimation((int)AnimationController.AnimType.Move, CG.animator);
         }
         while (IsMoving)
         {
+            if(CG.animator && !AnimationController.IsMovingAnimation(CG.animator))
+            {
+                AnimationController.PlayAnimation((int)AnimationController.AnimType.Move, CG.animator);
+            }
             yield return new WaitForSeconds(0.01f);
             transform.position += Speed * Time.deltaTime * transform.forward;
             if(CG.target)
@@ -48,17 +51,17 @@ public class MovementEntity : MonoBehaviour
                 }
             }
         }
-        EndMoving.Invoke();
-        if(animator)
+        if (CG.animator)
         {
-            AnimationController.CancelAnimation(animator);
+            AnimationController.CancelAnimation(CG.animator);
         }
+        EndMoving.Invoke();
+        
         yield return null;
     }
     public void ChangeIsMoving()
     {
         if(!CG) { CG = GetComponent<CollisionGestion>(); }
-        if(!animator) { animator = GetComponentInChildren<Animator>(); }
         if(!IsMoving)
         {
             IsMoving = true;

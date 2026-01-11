@@ -47,6 +47,8 @@ public static class AnimationController
     public static void PlayAnimation(int categorie, Animator animator)
     {
         CancelAnimation(animator);
+
+        animator.SetBool(DicoOfVar[(int)AnimType.Idle], false);
         animator.Play(GetAnimRandom(categorie));
         animator.SetBool(DicoOfVar[categorie], true);
     }
