@@ -7,6 +7,7 @@ public class CollisionGestion : MonoBehaviour
 
     private MovementEntity m_Entity;
     private AttackEntity m_AttackEntity;
+    public Animator animator;
     private void Start()
     {
         if(!target.GetComponent<MovementEntity>())
@@ -17,6 +18,7 @@ public class CollisionGestion : MonoBehaviour
     public void Starting()
     {
         m_Entity = GetComponent<MovementEntity>();
+        animator = GetComponentInChildren<Animator>();
         m_AttackEntity = GetComponent<AttackEntity>();
     }
     private GameObject RayCastForward()

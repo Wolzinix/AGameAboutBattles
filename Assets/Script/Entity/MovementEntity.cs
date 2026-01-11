@@ -11,6 +11,7 @@ public class MovementEntity : MonoBehaviour
     [HideInInspector] public UnityEvent EndMoving = new();
 
     private CollisionGestion CG;
+    
     void Start()
     {
         CG = GetComponent<CollisionGestion>();
@@ -28,9 +29,18 @@ public class MovementEntity : MonoBehaviour
                 }
             }
         }
+        
         StartMoving.Invoke();
+        if (CG.animator)
+        {
+            AnimationController.PlayAnimation((int)AnimationController.AnimType.Move, CG.animator);
+        }
         while (IsMoving)
         {
+            if(CG.animator && !AnimationController.IsMovingAnimation(CG.animator))
+            {
+                AnimationController.PlayAnimation((int)AnimationController.AnimType.Move, CG.animator);
+            }
             yield return new WaitForSeconds(0.01f);
             transform.position += Speed * Time.deltaTime * transform.forward;
             if(CG.target)
@@ -41,7 +51,12 @@ public class MovementEntity : MonoBehaviour
                 }
             }
         }
+        if (CG.animator)
+        {
+            AnimationController.CancelAnimation(CG.animator);
+        }
         EndMoving.Invoke();
+        
         yield return null;
     }
     public void ChangeIsMoving()
