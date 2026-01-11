@@ -19,17 +19,14 @@ public class MovementEntity : MonoBehaviour
     }
     IEnumerator MoveForward()
     {
-        if (CG && CG.target && CG.gameObject.CompareTag(gameObject.tag))
+        while(CG && 
+            CG.target && 
+            CG.target.CompareTag(gameObject.tag) && 
+            Vector3.Distance(CG.target.transform.position, transform.position) < 1f)
         {
-            if (Vector3.Distance(CG.target.transform.position, transform.position) < 1f)
-            {
-                while(CG && Vector3.Distance(CG.target.transform.position, transform.position) < 1f)
-                {
-                    yield return new WaitForSeconds(0.5f);
-                }
-            }
+            yield return new WaitForSeconds(0.5f);
         }
-        
+            
         StartMoving.Invoke();
         if (CG.animator)
         {

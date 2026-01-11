@@ -12,7 +12,7 @@ public static class AnimationController
 
     static readonly Dictionary<int, List<string>> DicoOFAnim = new()
     {
-        { 0, new List<string> () {"Attack1" } },
+        { 0, new List<string> () {"Attack" } },
         { 1,new List<string> () {"Idle"} },
         { 2,new List<string> () {"Move" } }
     };
