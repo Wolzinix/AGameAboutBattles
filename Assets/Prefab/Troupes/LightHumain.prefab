@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.98}
+  m_AnchoredPosition: {x: 0, y: 1}
   m_SizeDelta: {x: 1, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3897256942936897213
@@ -194,7 +194,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6246995865162632168}
-  - {fileID: 8568294199644886772}
+  - {fileID: 2596820652065822028}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &146336201620806820
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
---- !u!1001 &8170105116429578527
+--- !u!1001 &2559025226578227879
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -297,15 +297,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -313,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4
+      value: -0.467
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -359,35 +359,43 @@ PrefabInstance:
       propertyPath: m_Name
       value: Humain
       objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 859789087755507393}
+      addedObject: {fileID: 7734428934994318845}
   m_SourcePrefab: {fileID: 100100000, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
---- !u!4 &8568294199644886772 stripped
+--- !u!4 &2596820652065822028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
-  m_PrefabInstance: {fileID: 8170105116429578527}
+  m_PrefabInstance: {fileID: 2559025226578227879}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &9053187982645775438 stripped
+--- !u!1 &3405304279663661046 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8bf92c63ebd07684ebd40466ad89848f, type: 3}
-  m_PrefabInstance: {fileID: 8170105116429578527}
+  m_PrefabInstance: {fileID: 2559025226578227879}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &859789087755507393
+--- !u!95 &7734428934994318845
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9053187982645775438}
+  m_GameObject: {fileID: 3405304279663661046}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 183a667db635af2479e206cba2f93b96, type: 2}
+  m_Controller: {fileID: 22100000, guid: e4de6dad338456b4b98cb7236f4447fc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
