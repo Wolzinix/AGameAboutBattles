@@ -294,6 +294,10 @@ PrefabInstance:
       propertyPath: entityToSpawn
       value: 
       objectReference: {fileID: 9135547851547669889, guid: 0970964abd6a9f546a5641068f71d409, type: 3}
+    - target: {fileID: 5186018507487357456, guid: a55bc75e274f1d74bb76382279e5b029, type: 3}
+      propertyPath: spawnerPlayer
+      value: 
+      objectReference: {fileID: 2141532390}
     - target: {fileID: 7289189479690559265, guid: a55bc75e274f1d74bb76382279e5b029, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1599,6 +1603,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1958708640}
     - target: {fileID: 5753940797908944031, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
+      propertyPath: InfinitSpawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5753940797908944031, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
       propertyPath: TimeForSpawn
       value: 4
       objectReference: {fileID: 0}
@@ -1751,7 +1759,7 @@ PrefabInstance:
       objectReference: {fileID: 1383746336}
     - target: {fileID: 5753940797908944031, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
       propertyPath: InfinitSpawn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5753940797908944031, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
       propertyPath: TimeForSpawn
@@ -2016,6 +2024,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97faaf341a1fc7a42a22fcd038e2fe17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2141532390 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5753940797908944031, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
+  m_PrefabInstance: {fileID: 2010202643}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6345b56e27077f4f851a7675fa749c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
