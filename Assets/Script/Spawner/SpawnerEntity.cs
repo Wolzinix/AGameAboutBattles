@@ -14,6 +14,7 @@ public class SpawnerEntity : MonoBehaviour
 
     [HideInInspector] public UnityEvent SpawnedEntity = new();
     [HideInInspector] public UnityEvent AddEntityToSpawn = new();
+    [HideInInspector] public UnityEvent<int> SpawnNewEntity = new();
 
     private bool spawning = false;
     private GameObject _LastSpawned = null;
@@ -45,7 +46,9 @@ public class SpawnerEntity : MonoBehaviour
     {
         while(spawning) 
         {
-            yield return new WaitForSeconds(listOfSpawning[0].GetComponent<EntityManager>().TimeForApparition);
+            int timeForSpawn = listOfSpawning[0].GetComponent<EntityManager>().TimeForApparition;
+            SpawnNewEntity.Invoke(timeForSpawn);
+            yield return new WaitForSeconds(timeForSpawn);
             GenerateEntity(listOfSpawning[0]);
             RemoveFirstFromList();
         }
