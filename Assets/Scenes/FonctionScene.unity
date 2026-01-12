@@ -447,18 +447,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2131772878505645820, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2131772878505645820, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2454009619225407405, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4388025194979242209, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
       propertyPath: m_Name
       value: Ennemie
@@ -477,7 +465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5753940797908944031, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
       propertyPath: TimeForSpawn
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5753940797908944031, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
       propertyPath: EntitySpawnForIA
@@ -1200,34 +1188,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2131772878505645820, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2131772878505645820, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2454009619225407405, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: m_Size.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2454009619225407405, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2454009619225407405, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2454009619225407405, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659716124292041960, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: _Or
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 4388025194979242209, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1235,30 +1195,6 @@ PrefabInstance:
     - target: {fileID: 4388025194979242209, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
       propertyPath: m_TagString
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5753940797908944031, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: _gm
-      value: 
-      objectReference: {fileID: 9135547851547669889, guid: f1133b1592e3eec4390e78050a7bf2e1, type: 3}
-    - target: {fileID: 5753940797908944031, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: Spawn
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5753940797908944031, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: InfinitSpawn
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5753940797908944031, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: TimeForSpawn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6659802547009315203, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: Hp
-      value: 3000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6659802547009315203, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
-      propertyPath: Cost
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
