@@ -15,14 +15,15 @@ public class SpawnerEntity : MonoBehaviour
     [HideInInspector] public UnityEvent SpawnedEntity = new();
     [HideInInspector] public UnityEvent AddEntityToSpawn = new();
     [HideInInspector] public UnityEvent<int> SpawnNewEntity = new();
+    [HideInInspector] public UnityEvent<GameObject> SpawnNewEntityGM = new();
+    [HideInInspector] public RessourceManager ressourceManagerEnnemie;
+    [HideInInspector] public RessourceManager ressourceManagerAllie;
 
     private bool spawning = false;
     private GameObject _LastSpawned = null;
     private List<GameObject> listOfSpawning = new();
-    private RessourceManager ressourceManagerEnnemie;
-    private RessourceManager ressourceManagerAllie;
 
-    void Start()
+    void OnEnable()
     {
         foreach(RessourceManager i in FindSceneObjectsOfType(typeof(RessourceManager)))
         {
@@ -48,6 +49,7 @@ public class SpawnerEntity : MonoBehaviour
         {
             int timeForSpawnEntity = listOfSpawning[0].GetComponent<EntityManager>().TimeForApparition;
             SpawnNewEntity.Invoke(timeForSpawnEntity);
+            SpawnNewEntityGM.Invoke(listOfSpawning[0]);
             yield return new WaitForSeconds(timeForSpawnEntity);
             GenerateEntity(listOfSpawning[0]);
             RemoveFirstFromList();
@@ -69,7 +71,6 @@ public class SpawnerEntity : MonoBehaviour
             }
         }
     }
-
     private void RemoveFirstFromList()
     {
         listOfSpawning.RemoveAt(0);
