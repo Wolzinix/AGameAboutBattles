@@ -294,6 +294,10 @@ PrefabInstance:
       propertyPath: m_Colors.m_PressedColor.r
       value: 0.18490559
       objectReference: {fileID: 0}
+    - target: {fileID: 5186018507487357456, guid: a55bc75e274f1d74bb76382279e5b029, type: 3}
+      propertyPath: spawnerPlayer
+      value: 
+      objectReference: {fileID: 2054860133}
     - target: {fileID: 7289189479690559265, guid: a55bc75e274f1d74bb76382279e5b029, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1210,6 +1214,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b2bbc0d9a3db0d44a1fe0fef272a049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2054860133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5753940797908944031, guid: a3552fa9c4bd9854d8d3d03a47e2266e, type: 3}
+  m_PrefabInstance: {fileID: 2054860119}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6345b56e27077f4f851a7675fa749c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

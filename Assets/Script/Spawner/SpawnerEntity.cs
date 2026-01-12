@@ -13,6 +13,7 @@ public class SpawnerEntity : MonoBehaviour
     public bool InfinitSpawn = true;
 
     [HideInInspector] public UnityEvent SpawnedEntity = new();
+    [HideInInspector] public UnityEvent AddEntityToSpawn = new();
 
     private bool spawning = false;
     private GameObject _LastSpawned = null;
@@ -55,7 +56,9 @@ public class SpawnerEntity : MonoBehaviour
         if (ressourceManagerAllie.RemoveGold(entity.GetComponent<EntityManager>().GetCost()))
         {
             listOfSpawning.Add(entity);
-        
+            AddEntityToSpawn.Invoke();
+
+
             if (!spawning)
             {
                 spawning = true;
