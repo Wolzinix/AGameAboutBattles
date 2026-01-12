@@ -28,30 +28,24 @@ public class MovementEntity : MonoBehaviour
         }
             
         StartMoving.Invoke();
-        if (CG.animator)
-        {
-            AnimationController.PlayAnimation((int)AnimationController.AnimType.Move, CG.animator);
-        }
+        
         while (IsMoving)
         {
-            if(CG.animator && !AnimationController.IsMovingAnimation(CG.animator))
-            {
-                AnimationController.PlayAnimation((int)AnimationController.AnimType.Move, CG.animator);
-            }
             yield return new WaitForSeconds(0.01f);
-            transform.position += Speed * Time.deltaTime * transform.forward;
             if(CG.target)
             {
+                if (Vector3.Distance(CG.target.transform.position, transform.position) > 1f)
+                {
+                    transform.position += Speed * Time.deltaTime * transform.forward;
+                }
                 if (Vector3.Distance(CG.target.transform.position, transform.position) < 1f)
                 {
-                    IsMoving = false; 
+                    IsMoving = false;
+                    if (CG.animator) { AnimationController.CancelAnimation(CG.animator); }
                 }
             }
         }
-        if (CG.animator)
-        {
-            AnimationController.CancelAnimation(CG.animator);
-        }
+
         EndMoving.Invoke();
         
         yield return null;
@@ -62,7 +56,10 @@ public class MovementEntity : MonoBehaviour
         if(!IsMoving)
         {
             IsMoving = true;
-
+            if (CG.animator)
+            {
+                AnimationController.PlayAnimation((int)AnimationController.AnimType.Move, CG.animator);
+            }
             StartCoroutine(MoveForward());
         }
     }

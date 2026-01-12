@@ -46,9 +46,9 @@ public class SpawnerEntity : MonoBehaviour
     {
         while(spawning) 
         {
-            int timeForSpawn = listOfSpawning[0].GetComponent<EntityManager>().TimeForApparition;
-            SpawnNewEntity.Invoke(timeForSpawn);
-            yield return new WaitForSeconds(timeForSpawn);
+            int timeForSpawnEntity = listOfSpawning[0].GetComponent<EntityManager>().TimeForApparition;
+            SpawnNewEntity.Invoke(timeForSpawnEntity);
+            yield return new WaitForSeconds(timeForSpawnEntity);
             GenerateEntity(listOfSpawning[0]);
             RemoveFirstFromList();
         }

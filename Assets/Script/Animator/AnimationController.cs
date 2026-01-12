@@ -61,6 +61,10 @@ public static class AnimationController
     {
         return animator.GetBool(DicoOfVar[(int)AnimType.Move]);
     }
+    public static bool IsAttackingAnimation(Animator animator)
+    {
+        return animator.GetBool(DicoOfVar[(int)AnimType.Attack]);
+    }
 
     public static float GetAnimationStateInfo(Animator animator)
     {
