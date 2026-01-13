@@ -184,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 1730906712011368445}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.73}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -243,7 +243,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -263,8 +263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntitySpawnForIA: {fileID: 0}
   _spawnPoint: {fileID: 2131772878505645820}
-  TimeForSpawn: 2
-  InfinitSpawn: 1
+  TimeForSpawn: 1
+  InfinitSpawn: 0
   SpawnedEntity:
     m_PersistentCalls:
       m_Calls: []
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2bbc0d9a3db0d44a1fe0fef272a049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 3
+  Hp: 3000
   GoldCost: 3
   GoldGive: 3
   TimeForApparition: 3
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97faaf341a1fc7a42a22fcd038e2fe17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Or: 0
+  _Or: 30
   SpawnRessources: 1
   GoldUse:
     m_PersistentCalls:
