@@ -8,6 +8,8 @@ public class CollisionGestion : MonoBehaviour
     private MovementEntity m_Entity;
     private AttackEntity m_AttackEntity;
     [HideInInspector] public Animator animator;
+
+    [HideInInspector] public AudioSource audioSource;
     private void Start()
     {
         if(!target ||!target.GetComponent<MovementEntity>())
@@ -20,6 +22,7 @@ public class CollisionGestion : MonoBehaviour
         m_Entity = GetComponent<MovementEntity>();
         animator = GetComponentInChildren<Animator>();
         m_AttackEntity = GetComponent<AttackEntity>();
+        audioSource = GetComponent<AudioSource>();
     }
     private GameObject RayCastForward()
     {

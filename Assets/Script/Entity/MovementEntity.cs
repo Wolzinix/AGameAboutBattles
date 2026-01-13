@@ -50,6 +50,11 @@ public class MovementEntity : MonoBehaviour
         
         yield return null;
     }
+    private void OnDisable()
+    {
+        StartMoving.RemoveAllListeners();
+        EndMoving.RemoveAllListeners();
+    }
     public void ChangeIsMoving()
     {
         if(!CG) { CG = GetComponent<CollisionGestion>(); }

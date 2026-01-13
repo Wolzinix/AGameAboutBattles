@@ -13,6 +13,7 @@ public class EntityManager : MonoBehaviour
     [SerializeField] private Image hpBar;
 
     [SerializeField] private GameObject RecompenseText;
+    [SerializeField] private AudioClip deathSound;
     public float Attack = 2;
 
     [HideInInspector] public RessourceManager ressourceManagerToGive;
@@ -36,7 +37,7 @@ public class EntityManager : MonoBehaviour
         if (Hp <= 0)
         {
             GetComponent<BoxCollider>().enabled = false;
-            if(ressourceManagerToGive)
+            if (ressourceManagerToGive)
             {
                 ressourceManagerToGive.AddGold(GoldGive);
                 if(RecompenseText)
@@ -45,11 +46,12 @@ public class EntityManager : MonoBehaviour
                     textToRecompense.transform.position = transform.position;
                     textToRecompense.GetComponentInChildren<TMP_Text>().text = GoldGive.ToString();
                 }
-                
-
             }
             DeadEvent.Invoke();
             DeadEvent.RemoveAllListeners();
+
+            PlayDeathSound();
+
             Destroy(gameObject);
         }
     }
@@ -57,5 +59,13 @@ public class EntityManager : MonoBehaviour
     public int GetCost()
     {
         return GoldCost;
+    }
+    private void PlayDeathSound()
+    {
+        GameObject gmDeath = new GameObject();
+        AudioSource gmAS = gmDeath.AddComponent<AudioSource>();
+        gmAS.clip = deathSound;
+        gmAS.Play();
+        Destroy(gmDeath, 2);
     }
 }
