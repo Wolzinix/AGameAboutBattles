@@ -14336,7 +14336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1112169217460159182, guid: a98b28eb781ffb84194930e9e860e0ad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1943541829489684157, guid: a98b28eb781ffb84194930e9e860e0ad, type: 3}
       propertyPath: m_Pivot.x
@@ -14417,6 +14417,10 @@ PrefabInstance:
     - target: {fileID: 1943541829489684157, guid: a98b28eb781ffb84194930e9e860e0ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153899197314669498, guid: a98b28eb781ffb84194930e9e860e0ad, type: 3}
+      propertyPath: NumeroOfTheScene
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
