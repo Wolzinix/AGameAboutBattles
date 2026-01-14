@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackEntity : MonoBehaviour
@@ -8,7 +9,7 @@ public class AttackEntity : MonoBehaviour
     private EntityManager _target;
     private CollisionGestion CG;
 
-    [SerializeField] AudioClip attackSoundClip;
+    [SerializeField] List<AudioClip> ListattackSoundClip;
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class AttackEntity : MonoBehaviour
         if(!IsAttacking)
         {
             if (CG.animator) { AnimationController.PlayAnimation((int)AnimationController.AnimType.Attack, CG.animator); }
-            CG.audioSource.clip = attackSoundClip;
+            
             StartCoroutine(Attack());
         }
     }
@@ -31,6 +32,7 @@ public class AttackEntity : MonoBehaviour
         IsAttacking = true;
         while (IsAttacking)
         {
+            CG.audioSource.clip = ListattackSoundClip[Random.Range(0, ListattackSoundClip.Count)];
             CG.audioSource.Play();
             yield return new WaitForSeconds(1);
             if (CG.animator && !AnimationController.IsAttackingAnimation(CG.animator)) { AnimationController.PlayAnimation((int)AnimationController.AnimType.Attack, CG.animator); }
