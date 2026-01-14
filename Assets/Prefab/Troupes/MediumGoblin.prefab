@@ -289,7 +289,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0caba07849ba7754a8e51150e4441ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSoundClip: {fileID: 8300000, guid: b275a8d139c10174ab3c59d21dbc282e, type: 3}
+  ListattackSoundClip:
+  - {fileID: 8300000, guid: b275a8d139c10174ab3c59d21dbc282e, type: 3}
+  - {fileID: 8300000, guid: 945c597b7e24d9147b6cc5ca8b874924, type: 3}
+  - {fileID: 8300000, guid: e243c7469a2027e4db4b0ba55aae75dd, type: 3}
 --- !u!82 &1727956429878998871
 AudioSource:
   m_ObjectHideFlags: 0
